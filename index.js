@@ -205,8 +205,13 @@ function getCarInfoById(inventory) {
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
 function sortCarInventory(inventory) {
-  const sortCar = inventory.car_model.sort;
-  
+  const sortCar = inventory.sort(function (a, b) {
+    if (a.car_model < b.car_model) return -1;
+    else if (a.car_model > b.car_model) return 1;
+    return 0;
+  });
+
+
   return sortCar ;
  
 }
