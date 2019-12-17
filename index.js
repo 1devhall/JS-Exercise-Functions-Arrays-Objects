@@ -227,8 +227,13 @@ function sortCarInventory(inventory) {
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
 function getModelYears(inventory) {
-
-
+  let getYears = [];
+  inventory.forEach((inventory)=>{
+    let obj = (`${inventory.car_year}`);
+    obj = inventory.car_year
+    getYears.push(obj);
+  })
+  return getYears
 }
 
 /**
@@ -243,7 +248,7 @@ function getModelYears(inventory) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(inventory, ) {
   /* code here */
 }
 
